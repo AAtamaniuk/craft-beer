@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Header from './components/Header';
 import BeerGrid from './components/BeerGrid/BeerGrid';
 
 const API = 'https://api.punkapi.com/v2/beers';
@@ -24,6 +25,7 @@ class App extends Component {
     const { beers } = this.state;
     return (
       <div className="App">
+        <Header />
         <BeerGrid beers={beers} />
       </div>
     );
