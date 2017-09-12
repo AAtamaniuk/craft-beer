@@ -13,6 +13,9 @@ const styles = {
   },
   media: {
     height: 250,
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center'
   },
 };
 
@@ -47,6 +50,7 @@ function BeerItem(props) {
 
 BeerItem.propTypes = {
   classes: PropTypes.object.isRequired,
+  beer: PropTypes.object
 };
 
 export default withStyles(styles)(BeerItem);
