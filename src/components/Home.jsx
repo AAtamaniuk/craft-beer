@@ -1,10 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Typography from 'material-ui/Typography';
 
-const Home = (props) => {
+const Home = () => {
   return (
     <div>
-      <h1>This is home page</h1>
+      <Typography type="display4" gutterBottom align='center'>
+        This is home page
+      </Typography>
     </div>
   );
 };

@@ -1,36 +1,45 @@
+// @flow weak
+
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
+import MenuIcon from 'material-ui-icons/Menu';
 
-const styles = {
+
+const styles = theme => ({
   root: {
     width: '100%'
   },
   flex: {
-    flex: 1,
-    marginLeft: 25,
+    flex: 1
   },
   menuButton: {
-
-    marginRight: 20,
-  },
-};
+    marginLeft: -12,
+    marginRight: 20
+  }
+});
 
 function Header(props) {
   const classes = props.classes;
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar disableGutters>
+        <Toolbar>
+          <IconButton className={classes.menuButton} color="contrast" aria-label="Menu">
+            <MenuIcon/>
+          </IconButton>
           <Typography type="title" color="inherit" className={classes.flex}>
             CraftBeer
           </Typography>
-          <Button color="contrast">Login</Button>
+          <Button component={Link} to={'/'} color="contrast">Home</Button>
+          <Button component={Link} to={'/catalog'} color="contrast">Catalog</Button>
+          <Button component={Link} to={'/favorites'} color="contrast">Favorites</Button>
         </Toolbar>
       </AppBar>
     </div>
@@ -38,7 +47,7 @@ function Header(props) {
 }
 
 Header.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(Header);

@@ -9,19 +9,17 @@ import Typography from 'material-ui/Typography';
 
 const styles = {
   card: {
-    maxWidth: 300,
+    maxWidth: 300
   },
   media: {
     height: 250,
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center'
-  },
+  }
 };
 
-function BeerItem(props) {
-  const classes = props.classes;
-  const beer = props.beer;
+function Item({classes, beer}) {
   return (
     <div>
       <Card className={classes.card}>
@@ -48,10 +46,10 @@ function BeerItem(props) {
   );
 }
 
-BeerItem.propTypes = {
+Item.propTypes = {
   classes: PropTypes.object.isRequired,
   beer: PropTypes.object
 };
 
-export default withStyles(styles)(BeerItem);
+export default withStyles(styles)(Item);
 
